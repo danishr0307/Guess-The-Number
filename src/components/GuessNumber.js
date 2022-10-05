@@ -126,13 +126,13 @@ const GuessNumber = () => {
   });
 
   const [score, setScore] = useState(0);
+  
+  const scoreHandler = (e) => {
+    setScore(score + 1);
+  };
 
   const changeChar = (e) => {
     setScore(score - 1);
-  };
-
-  const scoreHandler = (e) => {
-    setScore(score + 1);
   };
 
   useEffect(() => {});
@@ -148,10 +148,11 @@ const GuessNumber = () => {
           <h4>Role: Controller </h4>
           {currChar.abilities.join()}
           <div className='options'>
+            <button onClick={scoreHandler}>Viper</button>
             <button onClick={changeChar}>Sova</button>
             <button onClick={changeChar}>Breach</button>
             <button onClick={changeChar}>Raze</button>
-            <button onClick={scoreHandler}>Viper</button>
+            
           </div>
         </div>
       </div>
